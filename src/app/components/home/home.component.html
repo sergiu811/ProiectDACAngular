@@ -1,1 +1,31 @@
-<h1 *ngIf="user$ | async as user "> Welcome to our app,{{user.email}} </h1>
+<html>
+<body>
+    <h1 style="color:white;  margin: auto;
+    width: 30%; text-align:center; padding-top: 30px; font-size: 3rem; padding-bottom: 30px; font-weight:700; ">Trending Movies</h1>
+
+    <div class="movies">  
+        <ng-container *ngFor="let movie of movies">
+          <div class="movie">
+            <div class="movie-thumb-container">
+              <img
+               *ngIf="movie.image"
+                src="{{movie.image}}"
+                alt="thumbnail"
+                class="movie-thumbnail"
+              />
+            <p *ngIf="!movie.image">No image</p>
+            </div>
+            <div class="movie-description">
+              <p class="movie-name">{{ movie.title }}</p>
+              <ul class="movie-genres" *ngFor="let genres of movie.genres" >
+                <li>
+                  <p>{{genres.name}}</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </ng-container> 
+      </div>
+      
+</body>
+</html>
