@@ -9,5 +9,6 @@ export const environment = {
     messagingSenderId: '765446300148',
     measurementId: 'G-NCKNGVFXKR',
   },
+  BASE_URL: 'https://movies-app1.p.rapidapi.com/api/movies',
   production: true
 };

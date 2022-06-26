@@ -17,6 +17,9 @@ import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { HomeComponent } from './components/home/home.component';
 import { HotToastModule } from '@ngneat/hot-toast';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpErrorsInterceptor } from 'src/interceptors/http-errors.interceptors';
+import { HttpHeadersInterceptor } from 'src/interceptors/http-headers.interceptors';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,17 @@ import { HotToastModule } from '@ngneat/hot-toast';
     provideAuth(() => getAuth()),
     HotToastModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: HttpHeadersInterceptor,
+    multi: true,
+  },
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: HttpErrorsInterceptor,
+    multi: true,
+  },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
