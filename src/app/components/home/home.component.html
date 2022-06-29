@@ -5,7 +5,7 @@
 
     <div class="movies">  
         <ng-container *ngFor="let movie of movies">
-          <div class="movie">
+          <div class="movie" (click)="openMovieDetails(movie._id)">
             <div class="movie-thumb-container">
               <img 
                *ngIf="movie.image"

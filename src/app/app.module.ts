@@ -20,6 +20,7 @@ import { HotToastModule } from '@ngneat/hot-toast';
 import { HttpErrorsInterceptor } from 'src/interceptors/http-errors.interceptors';
 import { HttpHeadersInterceptor } from 'src/interceptors/http-headers.interceptors';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { DetailsComponent } from './components/details/details.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     LandingComponent,
     LoginComponent,
     SignUpComponent,
-    HomeComponent
+    HomeComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
-    HotToastModule.forRoot()
+    HotToastModule.forRoot(),
   ],
   providers: [
     {

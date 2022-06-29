@@ -27,7 +27,12 @@ export class HomeComponent implements OnInit, OnDestroy {
         console.log(movieList);
       });
   }
+  openMovieDetails(id: string): void {
+    this.router.navigate(['details', id]);
+  }
   ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
+    if (this.movieSub) {
+      this.movieSub.unsubscribe();
+    }
   }
 }
