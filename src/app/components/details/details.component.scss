@@ -1,3 +1,54 @@
-p{
+.wrapper {
+    width: 70%;
+margin: auto;
+    overflow: hidden; 
+    background-color: rgba(0,0,0,.8);
+    padding: 3em;
+    margin-top: 40px;
+    height: 50em;
+}
+.image {
+    width: 40%;
+    float:left; 
+    
+}
+.table {
+  
+    overflow: hidden; 
+}
+.banner{
+    height: 50em;
+}
+.title{
+    font-size: 50px;
+    font-weight: 800;
     color: white;
+    padding-top: 3rem;
+}
+.DetailsTable{
+    color: white;
+    width: 100%;
+    padding-top: 50px;
+    text-align: center;
+    //border: solid 2px white;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 600;
+}
+.description{
+    width: 350px;
+}
+th{
+    font-size: 30px;
+    padding: 20px;
+    color: #000;
+    background-color: white;
+    border-radius: 22px;
+    
+}
+td{
+    padding: 20px;
+}
+.bigFont{
+    font-size: 25px;
 }
