@@ -14,4 +14,7 @@ export class HttpService {
     return this.http.get<APIResponse<Movie>>(`${env.BASE_URL}`);
   }
 
+  getOne(id:string){
+    return this.http.get(`https://movies-app1.p.rapidapi.com/api/movie/${id}`);
+   }
 }
