@@ -20,6 +20,15 @@ export function passwordMatchValidator():ValidatorFn{
   }
 }
 
+export class CustomValidators{
+
+  public static humanName(control:FormControl){
+      
+      const regularExpression = new RegExp("^\s*([A-Za-z]{1,}([\.,] |[-']| ))+[A-Za-z]+\.?\s*$")
+
+      return regularExpression.test(control.value)?null:{"not-human-name": true}
+  }
+}
 
 @Component({
   selector: 'app-sign-up',
@@ -29,7 +38,7 @@ export function passwordMatchValidator():ValidatorFn{
 export class SignUpComponent implements OnInit {
 
   signupForm= new FormGroup({
-    name: new FormControl('', Validators.required),
+    name: new FormControl('', [Validators.required,CustomValidators.humanName]),
     email: new FormControl('', [Validators.required,Validators.email]),
     password: new FormControl('', [Validators.required]),
     confirmPassword: new FormControl('', [Validators.required]),
