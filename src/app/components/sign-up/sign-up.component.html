@@ -7,6 +7,9 @@
             <mat-error *ngIf="name?.errors?.['required']">
                 Name is required
             </mat-error>
+            <mat-error *ngIf="name?.hasError('not-human-name')"> 
+                This name is not human. 
+            </mat-error>
         </mat-form-field>
 
         <mat-form-field>
