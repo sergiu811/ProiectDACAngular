@@ -1,11 +1,12 @@
 .wrapper {
-    width: 70%;
+    width: 80%;
+    height: fit-content;
 margin: auto;
     overflow: hidden; 
     background-color: rgba(0,0,0,.8);
     padding: 3em;
     margin-top: 40px;
-    height: 50em;
+    height: fit-content;
 }
 .image {
     width: 40%;
@@ -36,7 +37,7 @@ margin: auto;
     font-weight: 600;
 }
 .description{
-    width: 350px;
+    width: 60%;
 }
 th{
     font-size: 30px;
