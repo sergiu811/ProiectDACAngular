@@ -21,6 +21,7 @@ import { HttpErrorsInterceptor } from 'src/interceptors/http-errors.interceptors
 import { HttpHeadersInterceptor } from 'src/interceptors/http-headers.interceptors';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DetailsComponent } from './components/details/details.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { DetailsComponent } from './components/details/details.component';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     HotToastModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [
     {
